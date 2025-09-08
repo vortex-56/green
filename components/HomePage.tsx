@@ -16,7 +16,7 @@ const HomePage: React.FC = () => {
             if (element) {
                 // Timeout to ensure the page has rendered before scrolling
                 setTimeout(() => {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }, 100);
             }
         } else {

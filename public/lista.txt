@@ -1,0 +1,63 @@
+Títulos Hotel
+
+1	Habitación individual
+2	Habitación individual comfort
+3	Habitación matrimonial
+4	Habitación matrimonial comfort
+5	Habitación ejecutiva individual
+6	Habitación ejecutiva matrimonial
+7	Suite
+8	Suite comfort
+9	Doble Simple - 2 personas
+10	Doble Simple - 3 personas
+11	Doble Simple - 4 personas
+12	Doble Comfort - 2 personas
+13	Doble comfort - 3 personas
+14	Doble comfort - 4 personas
+15	Doble Especial - 2 Personas
+16	Doble especial - 3 personas
+17	Doble especial - 4 personas
+18	Triple comfort - 3 personas
+19	Triple comfort - 4 personas
+20	Triple Familiar - 3 personas
+21	Triple Familiar - 4 personas
+
+22	Cafetín
+23	Zona Co working
+24	Garaje privado
+25	Agencia de turismo
+26	Venta de souvenir
+
+
+
+
+
+
+Títulos Bungalows
+
+1		Cabaña Alpina Guanábano
+2		Cabaña Alpina Buganvilla
+3		Cabaña Alpina Naranjo
+4		Habitación Ciprés 1
+5		Habitación Ciprés 2
+6		Habitación Ciprés 3
+7		Habitación Cocos 1
+8		Habitación Cocos 2
+9		Habitación Limonero 1
+10		Habitación Limonero 2
+11		Habitación Bambú 1
+12		Habitación Bambú 2
+13		Habitación Bambú 3
+14		Habitación Cedro 1
+15		Habitación Cedro 2
+16		Habitación Charapita 1
+17		Habitación Charapita 2
+18		Habitación Shinbillo 1
+19		Habitación Shinbillo 2
+20		Habitación Shinbillo 3
+
+21		Restaurante
+22		Piscina Y Bar
+23		Zona De Juegos
+24		Caminata Al Cerro Runa Machu
+25		Noches De Fogatas

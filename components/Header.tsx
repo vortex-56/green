@@ -5,7 +5,7 @@ import { navMenu } from '../constants';
 import { NavItem } from '../types';
 import GreenParadiseLogo from './GreenParadiseLogo';
 
-const NavLink: React.FC<{ item: NavItem; onClick: () => void, className?: string }> = ({ item, onClick, className = '' }) => {
+const NavLink: React.FC<{ item: NavItem; onClick: () => void, className?: string, parentId?: string }> = ({ item, onClick, className = '', parentId }) => {
     const { language, content } = useLanguage();
     const location = useLocation();
     const navigate = useNavigate();
@@ -24,8 +24,8 @@ const NavLink: React.FC<{ item: NavItem; onClick: () => void, className?: string
 
         const cleanTargetId = targetId.replace('#', '');
         
-        if(location.pathname === '/' && cleanTargetId === 'contacto') {
-             document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if(location.pathname === '/' && cleanTargetId === 'contacto') {
+         document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
              return;
         }
 
@@ -33,7 +33,7 @@ const NavLink: React.FC<{ item: NavItem; onClick: () => void, className?: string
 
         if (location.pathname === '/') {
             if (element) {
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         } else {
             navigate('/', { state: { targetId: cleanTargetId } });
@@ -59,9 +59,19 @@ const NavLink: React.FC<{ item: NavItem; onClick: () => void, className?: string
             onClick={(e) => handleNavigate(e, item.href)}
             className={`text-sm text-gray-700 hover:text-black transition-colors duration-200 ${className}`}
         >
-            {item[language]}
+            {parentId === 'bungalows' ? toTitleCase(item[language]) : item[language]}
         </a>
     );
+};
+
+// Convert a string to Title Case (first letter of each word uppercase, rest lowercase)
+const toTitleCase = (text: string) => {
+    if (!text) return text;
+    return text
+        .toLowerCase()
+        .split(' ')
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(' ');
 };
 
 
@@ -138,7 +148,7 @@ const Header: React.FC = () => {
 
                                 const cleanTargetId = targetId.replace('#', '');
                                 if (location.pathname === '/') {
-                                    document.getElementById(cleanTargetId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                    document.getElementById(cleanTargetId)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
                                 } else {
                                     navigate('/', { state: { targetId: cleanTargetId } });
                                 }
@@ -164,6 +174,7 @@ const Header: React.FC = () => {
                                             item={subItem} 
                                             onClick={() => setOpenSubMenu(null)} 
                                             className="block py-1 px-3 text-sm whitespace-nowrap rounded-md hover:bg-gray-100 font-medium"
+                                            parentId={item.id}
                                         />
                                     ))}
                                 </div>

@@ -24,22 +24,30 @@ const getIconForFeature = (featureText: string): string => {
 
 const BungalowCard: React.FC<{ item: Bungalow }> = ({ item }) => {
     const { language } = useLanguage();
+    const toTitleCase = (text: string) => {
+        if (!text) return text;
+        return text
+            .toLowerCase()
+            .split(' ')
+            .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+            .join(' ');
+    };
     return (
         <div id={item.id} className="bg-[#efefef] rounded-lg shadow-lg overflow-hidden flex flex-col w-full max-w-sm mx-auto transition-transform transform hover:-translate-y-2">
             <div className="relative">
-                <img src={item.image} alt={item.name[language]} className="w-full h-48 object-cover" />
+                <img src={item.image} alt={toTitleCase(item.name[language])} className="w-full aspect-square object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                <h3 className="absolute bottom-0 left-0 p-4 text-white text-xl font-bold w-full">{item.name[language]}</h3>
+                <h3 className="absolute bottom-0 left-0 p-4 text-white text-xl font-bold w-full">{toTitleCase(item.name[language])}</h3>
             </div>
             <div className="p-4 flex-grow">
-                <ul className="space-y-2">
+                <ul className="space-y-1">
                     {item.features[language].map((feature, index) => {
                          // Always use the Spanish feature text to determine the icon for consistency
                         const spanishFeature = item.features['es'][index] || feature;
                         return (
                             <li key={index} className="flex items-start">
                                 <span className="flex-shrink-0 mr-2 w-5 text-center">{getIconForFeature(spanishFeature)}</span>
-                                <span className="text-gray-700 text-sm font-semibold">{feature}</span>
+                                <span className="text-gray-700 text-sm font-semibold leading-tight">{feature}</span>
                             </li>
                         );
                     })}
@@ -51,11 +59,19 @@ const BungalowCard: React.FC<{ item: Bungalow }> = ({ item }) => {
 
 const ActivityCard: React.FC<{ item: ServiceItem }> = ({ item }) => {
     const { language } = useLanguage();
+    const toTitleCase = (text: string) => {
+        if (!text) return text;
+        return text
+            .toLowerCase()
+            .split(' ')
+            .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+            .join(' ');
+    };
     return (
         <div id={item.id} className="group relative rounded-lg overflow-hidden shadow-lg transition-transform transform hover:-translate-y-2 flex flex-col bg-white w-full max-w-sm mx-auto">
-            <img src={item.image} alt={item.name[language]} className="w-full h-48 object-cover" />
+            <img src={item.image} alt={toTitleCase(item.name[language])} className="w-full aspect-square object-cover" />
              <div className="p-4 flex flex-col flex-grow">
-                <h3 className="text-gray-900 text-xl font-bold mb-2">{item.name[language]}</h3>
+                <h3 className="text-gray-900 text-xl font-bold mb-2">{toTitleCase(item.name[language])}</h3>
                 <p className="text-gray-600 text-sm flex-grow">{item.description?.[language]}</p>
             </div>
         </div>

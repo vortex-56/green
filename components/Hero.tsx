@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
     const handleScrollTo = (id: string) => {
         const element = document.getElementById(id);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     };
     

@@ -203,11 +203,59 @@ export const hotelRooms: HotelRoom[] = [
     },
 ];
 
+export const hotelActivities: ServiceItem[] = [
+    {
+        id: slugify("CAFETÍN"),
+        name: { es: 'Cafetín', en: 'Cafeteria' },
+        image: 'https://picsum.photos/seed/cafetin/400/300',
+        description: {
+            es: 'Un acogedor espacio para disfrutar de café local, repostería casera y desayunos ligeros.',
+            en: 'A cozy spot to enjoy local coffee, homemade pastries and light breakfasts.'
+        }
+    },
+    {
+        id: slugify("ZONA CO WORKING"),
+        name: { es: 'Zona Co working', en: 'Co-working Area' },
+        image: 'https://picsum.photos/seed/coworking/400/300',
+        description: {
+            es: 'Área con mesas, enchufes y Wi-Fi estable ideal para trabajar o estudiar en tranquilidad.',
+            en: 'Area with desks, power outlets and stable Wi-Fi — ideal for working or studying in peace.'
+        }
+    },
+    {
+        id: slugify("GARAGE PRIVADO"),
+        name: { es: 'Garaje privado', en: 'Private Garage' },
+        image: 'https://picsum.photos/seed/garage/400/300',
+        description: {
+            es: 'Espacio seguro y vigilado para el estacionamiento de vehículos de huéspedes.',
+            en: 'Secure, monitored parking area for guests vehicles.'
+        }
+    },
+    {
+        id: slugify("AGENCIA DE TURISMO"),
+        name: { es: 'Agencia de turismo', en: 'Tour Agency' },
+        image: 'https://picsum.photos/seed/touragency/400/300',
+        description: {
+            es: 'Asesoría y reservas para excursiones, traslados y actividades en la región.',
+            en: 'Advice and bookings for excursions, transfers and regional activities.'
+        }
+    },
+    {
+        id: slugify("VENTA DE SOUVENIR"),
+        name: { es: 'Venta de souvenir', en: 'Souvenir Shop' },
+        image: 'https://picsum.photos/seed/souvenir/400/300',
+        description: {
+            es: 'Pequeña tienda con artesanías locales, recuerdos y productos típicos.',
+            en: 'Small shop with local crafts, souvenirs and typical regional products.'
+        }
+    }
+];
+
 export const bungalows: Bungalow[] = [
     {
         id: slugify("CABAÑA ALPINA GUANÁBANO"),
         name: { es: "CABAÑA ALPINA GUANÁBANO", en: "ALPINE CABIN GUANABANO" },
-        image: '2CB/CB01.webp',
+    image: '5SB/b01.webp',
         features: {
             es: ["Capacidad para 2 personas", "Cama de dos plazas", "Desayuno para dos personas", "No cuenta con TV", "Ventilador", "Baño propio", "1 Mesita de noche"],
             en: ["Capacity for 2 people", "Full-size bed", "Breakfast for two people", "No TV", "Fan", "Private bathroom", "1 bedside table"]
@@ -216,7 +264,7 @@ export const bungalows: Bungalow[] = [
     {
         id: slugify("CABAÑA ALPINA BUGANVILLA"),
         name: { es: "CABAÑA ALPINA BUGANVILLA", en: "ALPINE CABIN BUGANVILLA" },
-        image: '2CB/CB02.webp',
+    image: '5SB/b02.webp',
         features: {
             es: ["Capacidad para 2 personas", "Cama de 2 plazas", "Ventilador y aire acondicionado", "Baño externo para la habitación"],
             en: ["Capacity for 2 people", "Full-size bed", "Fan and air conditioning", "External bathroom for the room"]
@@ -225,7 +273,7 @@ export const bungalows: Bungalow[] = [
     {
         id: slugify("CABAÑA ALPINA NARANJO"),
         name: { es: "CABAÑA ALPINA NARANJO", en: "ALPINE CABIN NARANJO" },
-        image: '2CB/CB03.webp',
+    image: '5SB/b03.webp',
         features: {
             es: ["Capacidad para 2 personas", "Cama de 2 plazas", "Desayuno para 2", "Ventilador", "Baño propio", "Aire acondicionado"],
             en: ["Capacity for 2 people", "Full-size bed", "Breakfast for 2", "Fan", "Private bathroom", "Air conditioning"]
@@ -234,7 +282,7 @@ export const bungalows: Bungalow[] = [
     {
         id: slugify("HABITACIÓN CIPRÉS 1"),
         name: { es: "HABITACIÓN CIPRÉS 1", en: "CIPRES ROOM 1" },
-        image: '2CB/CB04.webp',
+    image: '5SB/b04.webp',
         features: {
             es: ["Capacidad para 2 personas", "1 cama de dos plazas", "Desayuno para dos", "Ventilador", "1 Frigobar", "Baño propio", "Amenities de baño", "No incluye TV", "No incluye Aire acondicionado"],
             en: ["Capacity for 2 people", "1 full-size bed", "Breakfast for two", "Fan", "1 Minibar", "Private bathroom", "Bath amenities", "Does not include TV", "Does not include Air conditioning"]
@@ -243,7 +291,7 @@ export const bungalows: Bungalow[] = [
     {
         id: slugify("HABITACIÓN CIPRÉS 2"),
         name: { es: "HABITACIÓN CIPRÉS 2", en: "CIPRES ROOM 2" },
-        image: '2CB/CB05.webp',
+    image: '5SB/b05.webp',
         features: {
             es: ["Capacidad para 2 personas", "Cama de 2 plazas", "Desayuno para 2 personas", "Aire acondicionado", "Baño propio", "Sala amueblada y Frigobar", "Agua caliente", "No incluye TV"],
             en: ["Capacity for 2 people", "Full-size bed", "Breakfast for 2 people", "Air conditioning", "Private bathroom", "Furnished living area and Minibar", "Hot water", "Does not include TV"]
@@ -252,7 +300,7 @@ export const bungalows: Bungalow[] = [
     {
         id: slugify("HABITACIÓN CIPRÉS 3"),
         name: { es: "HABITACIÓN CIPRÉS 3", en: "CIPRES ROOM 3" },
-        image: '2CB/CB06.webp',
+    image: '5SB/b06.webp',
         features: {
             es: ["Capacidad para 3 a 4 personas", "2 Camas de dos plazas", "Desayuno para cuatro personas", "Ventilador", "No cuenta con TV", "Aire acondicionado", "Ducha tina propia", "Baño propio"],
             en: ["Capacity for 3 to 4 people", "2 full-size beds", "Breakfast for four people", "Fan", "No TV", "Air conditioning", "Private bathtub", "Private bathroom"]
@@ -261,7 +309,7 @@ export const bungalows: Bungalow[] = [
     {
         id: slugify("HABITACIÓN COCOS 1"),
         name: { es: "HABITACIÓN COCOS 1", en: "COCOS ROOM 1" },
-        image: '2CB/CB07.webp',
+    image: '5SB/b07.webp',
         features: {
             es: ["Capacidad para 2 personas", "Cama Queen", "Desayuno para dos", "Aire acondicionado", "1 frigobar", "Terraza privada", "Baño propio con tina", "Amenities de baño", "Tina de Baño Externo", "No conta com TV"],
             en: ["Capacity for 2 people", "One Queen Bed", "Breakfast for two", "Air conditioning", "1 minibar", "Private terrace", "Private bathroom with tub", "Bath amenities", "External Bathtub", "No TV"]
@@ -270,7 +318,7 @@ export const bungalows: Bungalow[] = [
     {
         id: slugify("HABITACIÓN COCOS 2"),
         name: { es: "HABITACIÓN COCOS 2", en: "COCOS ROOM 2" },
-        image: '2CB/CB08.webp',
+    image: '5SB/b08.webp',
         features: {
             es: ["Capacidad para 4 personas", "Vista al Parque Nacional Tingo María", "2 camas de 2 plazas", "Desayuno para los integrantes", "Baño privado", "Aire acondicionado", "Closet"],
             en: ["Capacity for 4 people", "View of Tingo María National Park", "2 full-size beds", "Breakfast for guests", "Private bathroom", "Air conditioning", "Closet"]
@@ -279,7 +327,7 @@ export const bungalows: Bungalow[] = [
     {
         id: slugify("HABITACIÓN LIMONERO 1"),
         name: { es: "HABITACIÓN LIMONERO 1", en: "LIMONERO ROOM 1" },
-        image: 'https://picsum.photos/seed/limonero1/400/300',
+    image: '5SB/b09.webp',
         features: {
             es: ["Capacidad para 2 personas", "Cama Queen", "Desayuno para 2", "Aire acondicionado", "Baño propio", "Frigobar", "Primer piso"],
             en: ["Capacity for 2 people", "Queen Bed", "Breakfast for 2", "Air conditioning", "Private bathroom", "Minibar", "First floor"]
@@ -288,7 +336,7 @@ export const bungalows: Bungalow[] = [
     {
         id: slugify("HABITACIÓN LIMONERO 2"),
         name: { es: "HABITACIÓN LIMONERO 2", en: "LIMONERO ROOM 2" },
-        image: 'https://picsum.photos/seed/limonero2/400/300',
+    image: '5SB/b10.webp',
         features: {
             es: ["Capacidad para 4 personas", "Vista al Parque Nacional Tingo María", "2 Camas de 2 plazas", "Desayuno para 4", "Ventilador", "Terraza acondicionada", "Baño propio", "Aire acondicionado", "Segundo piso"],
             en: ["Capacity for 4 people", "View of Tingo María National Park", "2 Full-size beds", "Breakfast for 4", "Fan", "Furnished terrace", "Private bathroom", "Air conditioning", "Second floor"]
@@ -297,7 +345,7 @@ export const bungalows: Bungalow[] = [
     {
         id: slugify("HABITACIÓN BAMBÚ 1"),
         name: { es: "HABITACIÓN BAMBÚ 1", en: "BAMBU ROOM 1" },
-        image: 'https://picsum.photos/seed/bambu1/400/300',
+    image: '5SB/b11.webp',
         features: {
             es: ["Capacidad para 2 personas", "Cama de 2 plazas", "Desayuno para 2", "Frigobar", "Ventilador", "Baño propio"],
             en: ["Capacity for 2 people", "Full-size bed", "Breakfast for 2", "Minibar", "Fan", "Private bathroom"]
@@ -306,7 +354,7 @@ export const bungalows: Bungalow[] = [
     {
         id: slugify("HABITACIÓN BAMBÚ 2"),
         name: { es: "HABITACIÓN BAMBÚ 2", en: "BAMBU ROOM 2" },
-        image: 'https://picsum.photos/seed/bambu2/400/300',
+    image: '5SB/b12.webp',
         features: {
             es: ["Capacidad para 2 personas", "Cama de dos plazas", "Desayuno para dos", "Ventilador", "No cuenta con TV"],
             en: ["Capacity for 2 people", "Full-size bed", "Breakfast for two", "Fan", "No TV"]
@@ -315,7 +363,7 @@ export const bungalows: Bungalow[] = [
     {
         id: slugify("HABITACIÓN BAMBÚ 3"),
         name: { es: "HABITACIÓN BAMBÚ 3", en: "BAMBU ROOM 3" },
-        image: 'https://picsum.photos/seed/bambu3/400/300',
+    image: '5SB/b13.webp',
         features: {
             es: ["Capacidad para 5 personas", "Vista al Parque Nacional Tingo María", "5 Camas de 1 1/2 plazas", "Desayuno para 5", "Ventilador", "Terraza acondicionada", "Baño propio"],
             en: ["Capacity for 5 people", "View of Tingo María National Park", "5 Twin beds", "Breakfast for 5", "Fan", "Furnished terrace", "Private bathroom"]
@@ -324,7 +372,7 @@ export const bungalows: Bungalow[] = [
     {
         id: slugify("HABITACIÓN CEDRO 1"),
         name: { es: "HABITACIÓN CEDRO 1", en: "CEDRO ROOM 1" },
-        image: 'https://picsum.photos/seed/cedro1/400/300',
+    image: '5SB/b14.webp',
         features: {
             es: ["Capacidad para 2 personas", "Cama de 2 plazas", "Desayuno para 2 personas", "Aire acondicionado portátil", "Baño propio", "Primer piso"],
             en: ["Capacity for 2 people", "Full-size bed", "Breakfast for 2 people", "Portable air conditioning", "Private bathroom", "First floor"]
@@ -333,7 +381,7 @@ export const bungalows: Bungalow[] = [
     {
         id: slugify("HABITACIÓN CEDRO 2"),
         name: { es: "HABITACIÓN CEDRO 2", en: "CEDRO ROOM 2" },
-        image: 'https://picsum.photos/seed/cedro2/400/300',
+    image: '5SB/b15.webp',
         features: {
             es: ["Capacidad para 2 personas", "Cama de 2 plazas", "Desayuno para dos", "Baño propio", "Ventilador", "Pequeña terraza", "Segundo piso"],
             en: ["Capacity for 2 people", "Full-size bed", "Breakfast for two", "Private bathroom", "Fan", "Small terrace", "Second floor"]
@@ -342,7 +390,7 @@ export const bungalows: Bungalow[] = [
     {
         id: slugify("HABITACIÓN CHARAPITA 1"),
         name: { es: "HABITACIÓN CHARAPITA 1", en: "CHARAPITA ROOM 1" },
-        image: 'https://picsum.photos/seed/charapita1/400/300',
+    image: '5SB/b16.webp',
         features: {
             es: ["Capacidad para 2 personas", "Cama de dos plazas", "Desayuno para 2", "Ventilador", "1 Frigobar", "Terraza privada", "Baño propio con tina", "Amenities de baño", "No cuenta com TV"],
             en: ["Capacity for 2 people", "Full-size bed", "Breakfast for 2", "Fan", "1 Minibar", "Private terrace", "Private bathroom with tub", "Bath amenities", "No TV"]
@@ -351,7 +399,7 @@ export const bungalows: Bungalow[] = [
     {
         id: slugify("HABITACIÓN CHARAPITA 2"),
         name: { es: "HABITACIÓN CHARAPITA 2", en: "CHARAPITA ROOM 2" },
-        image: 'https://picsum.photos/seed/charapita2/400/300',
+    image: '5SB/b17.webp',
         features: {
             es: ["Capacidad para 5 personas", "1 cama de 2 plazas", "1 camarote (2plz y 1 1/2)", "Desayuno para 5 personas", "Ventilador", "Baño propio", "1 Frigobar", "Amenities de baño", "No cuenta con TV"],
             en: ["Capacity for 5 people", "1 full-size bed", "1 bunk bed (full and twin)", "Breakfast for 5 people", "Fan", "Private bathroom", "1 Minibar", "Bath amenities", "No TV"]
@@ -360,7 +408,7 @@ export const bungalows: Bungalow[] = [
     {
         id: slugify("HABITACIÓN SHINBILLO 1"),
         name: { es: "HABITACIÓN SHINBILLO 1", en: "SHINBILLO ROOM 1" },
-        image: 'https://picsum.photos/seed/shinbillo1/400/300',
+    image: '5SB/b18.webp',
         features: {
             es: ["Capacidad para 2 personas", "Cama de dos plazas", "Desayuno para 2", "Ventilador", "Baño propio", "Amenities de baño", "No conta com TV"],
             en: ["Capacity for 2 people", "Full-size bed", "Breakfast for 2", "Fan", "Private bathroom", "Bath amenities", "No TV"]
@@ -369,7 +417,7 @@ export const bungalows: Bungalow[] = [
     {
         id: slugify("HABITACIÓN SHINBILLO 2"),
         name: { es: "HABITACIÓN SHINBILLO 2", en: "SHINBILLO ROOM 2" },
-        image: 'https://picsum.photos/seed/shinbillo2/400/300',
+    image: '5SB/b19.webp',
         features: {
             es: ["Capacidad para 2 personas", "Cama Queen", "Desayuno para 2", "Ventilador", "1 Frigobar", "Terraza privada", "Baño propio con tina", "Amenities de baño", "No cuenta com TV"],
             en: ["Capacity for 2 people", "Queen Bed", "Breakfast for 2", "Fan", "1 Minibar", "Private terrace", "Private bathroom with tub", "Bath amenities", "No TV"]
@@ -378,7 +426,7 @@ export const bungalows: Bungalow[] = [
     {
         id: slugify("HABITACIÓN SHINBILLO 3"),
         name: { es: "HABITACIÓN SHINBILLO 3", en: "SHINBILLO ROOM 3" },
-        image: 'https://picsum.photos/seed/shinbillo3/400/300',
+    image: '5SB/b20.webp',
         features: {
             es: ["Capacidad para 2 personas", "Cama queen", "Desayuno para 2", "Ventilador", "1 Frigobar", "Terraza privada", "Baño propio", "No cuenta con TV", "Tercer piso"],
             en: ["Capacity for 2 people", "Queen bed", "Breakfast for 2", "Fan", "1 Minibar", "Private terrace", "Private bathroom", "No TV", "Third floor"]
@@ -390,7 +438,7 @@ export const bungalowActivities: ServiceItem[] = [
     { 
         id: slugify("RESTAURANTE"), 
         name: { es: 'RESTAURANTE', en: 'RESTAURANT' }, 
-        image: 'https://picsum.photos/seed/restaurante/400/300',
+    image: '5SB/b21.webp',
         description: {
             es: "Atrévete a disfrutar de la mejor comida de la selva junto con los deliciosos cocteles y bebidas típicas de la Amazonía.",
             en: "Dare to enjoy the best food of the jungle along with delicious cocktails and typical Amazonian drinks."
@@ -399,7 +447,7 @@ export const bungalowActivities: ServiceItem[] = [
     { 
         id: slugify("PISCINA Y BAR"), 
         name: { es: 'PISCINA Y BAR', en: 'POOL & BAR' }, 
-        image: 'https://picsum.photos/seed/piscina/400/300',
+    image: '5SB/b22.webp',
         description: {
             es: "Hermosa piscina con pared de cristal para fotos increíbles y un bar para refrescarte.",
             en: "Beautiful pool with a glass wall for incredible photos and a bar to cool off."
@@ -408,7 +456,7 @@ export const bungalowActivities: ServiceItem[] = [
     { 
         id: slugify("ZONA DE JUEGOS"), 
         name: { es: 'ZONA DE JUEGOS', en: 'PLAYGROUND' }, 
-        image: 'https://picsum.photos/seed/juegos/400/300',
+    image: '5SB/b23.webp',
         description: {
             es: "Un espacio para compartir momentos memorables con toda la familia. Solicita los juegos en recepción.",
             en: "A space to share memorable moments with the whole family. Request games at the reception."
@@ -417,7 +465,7 @@ export const bungalowActivities: ServiceItem[] = [
     { 
         id: slugify("CAMINATA AL CERRO RUNA MACHU"), 
         name: { es: 'CAMINATA AL CERRO RUNA MACHU', en: 'HIKE TO RUNA MACHU HILL' }, 
-        image: 'https://picsum.photos/seed/caminata/400/300',
+    image: '5SB/b24.webp',
         description: {
             es: "Los fines de semana, únete a nuestras caminatas gratuitas y exclusivas para huéspedes para conectar con la naturaleza.",
             en: "On weekends, join our free and exclusive hikes for guests to connect with nature."
@@ -426,7 +474,7 @@ export const bungalowActivities: ServiceItem[] = [
     { 
         id: slugify("NOCHES DE FOGATAS"), 
         name: { es: 'NOCHES DE FOGATAS', en: 'BONFIRE NIGHTS' }, 
-        image: 'https://picsum.photos/seed/fogata/400/300',
+    image: '5SB/b25.webp',
         description: {
             es: "Disfruta de cuentos de la selva, malvaviscos y música alrededor de nuestras fogatas los fines de semana.",
             en: "Enjoy jungle stories, marshmallows, and music around our bonfires on weekends."
@@ -504,6 +552,7 @@ export const translations = {
         aboutTitle: 'Sobre Nosotros',
         aboutText: 'En Green Paradise, te invitamos a sumergirte en un oasis de tranquilidad y belleza natural. Nuestro hotel y bungalows están diseñados para ofrecerte una experiencia inolvidable, combinando confort y aventura en el corazón de un paisaje exuberante. Somos tu escape perfecto de la rutina diaria.',
         hotelServicesTitle: 'Servicios del Hotel',
+    hotelActivitiesTitle: 'Áreas Comunes y Servicios del hotel',
         bungalowServicesTitle: 'Servicios de los Bungalows',
         bungalowActivitiesTitle: 'Áreas Comunes y Actividades de los Bungalows',
         contactTitle: 'Contáctanos',
@@ -780,8 +829,8 @@ Daños a la propiedad mueble:
 •	Cafetera: 150.00
 •	Cortinas 1000.00`,
         nav_contacto: 'Contacto',
-        whatsappHotelNumber: '51979309553',
-        whatsappBungalowNumber: '51960195080',
+    whatsappHotelNumber: '51993294249',
+    whatsappBungalowNumber: '51979309553',
         whatsappHotelLabel: 'WhatsApp de Hotel',
         whatsappBungalowLabel: 'WhatsApp de Bungalows',
     },
@@ -808,6 +857,7 @@ Daños a la propiedad mueble:
         aboutTitle: 'About Us',
         aboutText: 'At Green Paradise, we invite you to immerse yourself in an oasis of tranquility and natural beauty. Our hotel and bungalows are designed to offer you an unforgettable experience, combining comfort and adventure in the heart of a lush landscape. We are your perfect escape from the daily routine.',
         hotelServicesTitle: 'Hotel Services',
+    hotelActivitiesTitle: 'Hotel Common Areas & Services',
         bungalowServicesTitle: 'Bungalow Services',
         bungalowActivitiesTitle: 'Bungalow Common Areas & Activities',
         contactTitle: 'Contact Us',
@@ -1083,8 +1133,8 @@ Damage to Movable Property:
 •	Coffee maker: S/150.00
 •	Curtains: S/1000.00`,
         nav_contacto: 'Contact',
-        whatsappHotelNumber: '51979309553',
-        whatsappBungalowNumber: '51960195080',
+    whatsappHotelNumber: '51993294249',
+    whatsappBungalowNumber: '51979309553',
         whatsappHotelLabel: 'Hotel WhatsApp',
         whatsappBungalowLabel: 'Bungalows WhatsApp',
     }

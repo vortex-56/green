@@ -63,7 +63,7 @@ const PoliciesPage: React.FC = () => {
             if (hash) {
                 const element = document.getElementById(hash);
                 if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
             } else {
                 window.scrollTo(0, 0);

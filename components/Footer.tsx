@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
-import { hotelRooms, allBungalowServices, translations } from '../constants';
+import { hotelRooms, allBungalowServices, translations, hotelActivities } from '../constants';
 import { NavItem } from '../types';
 
 const Footer: React.FC = () => {
@@ -25,16 +25,25 @@ const Footer: React.FC = () => {
 
         if (location.pathname === '/') {
             if (element) {
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                element.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         } else {
             navigate('/', { state: { targetId: cleanTargetId } });
         }
     };
     
+    const toTitleCase = (text: string) => {
+        if (!text) return text;
+        return text
+            .toLowerCase()
+            .split(' ')
+            .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+            .join(' ');
+    };
+
     const FooterLink: React.FC<{item: NavItem}> = ({ item }) => (
         <a href={item.href} onClick={(e) => handleNavigate(e, item.href)} className="text-gray-500 hover:text-green-700 transition-colors duration-200">
-            {item[language]}
+            {toTitleCase(item[language])}
         </a>
     );
     
@@ -66,6 +75,10 @@ const Footer: React.FC = () => {
 
     const groupedHotelLinks = getGroupedFooterLinks(hotelRooms);
     const groupedBungalowLinks = getGroupedFooterLinks(allBungalowServices);
+
+    // Convert hotelActivities into NavItem-like links to display in the footer
+    const hotelActivityLinks: NavItem[] = hotelActivities.map(a => ({ id: a.id, es: a.name.es, en: a.name.en, href: `#${a.id}` }));
+    const hotelLinksForFooter = [...groupedHotelLinks, ...hotelActivityLinks];
 
 
     const hotelPoliciesItem: NavItem = {
@@ -101,9 +114,9 @@ const Footer: React.FC = () => {
                         <p className="text-gray-500 text-sm max-w-xs">{content.aboutText.substring(0,100)}...</p>
                     </div>
                     <div>
-                        <h3 className="text-sm font-semibold text-gray-900 tracking-wider uppercase">{content.hotelServicesTitle}</h3>
+                                <h3 className="text-sm font-semibold text-gray-900 tracking-wider">{toTitleCase(content.hotelServicesTitle)}</h3>
                         <ul className="mt-4 space-y-2">
-                            {groupedHotelLinks.map((item) => (
+                                     {hotelLinksForFooter.map((item) => (
                                 <li key={item.id}>
                                     <FooterLink item={item} />
                                 </li>
@@ -111,7 +124,7 @@ const Footer: React.FC = () => {
                         </ul>
                     </div>
                     <div>
-                        <h3 className="text-sm font-semibold text-gray-900 tracking-wider uppercase">{content.bungalowServicesTitle}</h3>
+                                <h3 className="text-sm font-semibold text-gray-900 tracking-wider">{toTitleCase(content.bungalowServicesTitle)}</h3>
                          <ul className="mt-4 space-y-2">
                             {groupedBungalowLinks.map((item) => (
                                 <li key={item.id}>
@@ -121,18 +134,18 @@ const Footer: React.FC = () => {
                         </ul>
                     </div>
                      <div>
-                        <h3 className="text-sm font-semibold text-gray-900 tracking-wider uppercase">{content.footerPolicies}</h3>
+                                <h3 className="text-sm font-semibold text-gray-900 tracking-wider">{toTitleCase(content.footerPolicies)}</h3>
                          <ul className="mt-4 space-y-2">
                            <li><FooterLink item={hotelPoliciesItem} /></li>
                            <li><FooterLink item={bungalowPoliciesItem} /></li>
                         </ul>
-                        <a 
-                           href={contactoItem.href} 
-                           onClick={(e) => handleNavigate(e, contactoItem.href)}
-                           className="mt-6 block text-sm font-semibold text-gray-900 tracking-wider uppercase hover:text-green-700 transition-colors duration-200"
-                        >
-                           {contactoItem[language]}
-                        </a>
+                                <a 
+                                    href={contactoItem.href} 
+                                    onClick={(e) => handleNavigate(e, contactoItem.href)}
+                                    className="mt-6 block text-sm font-semibold text-gray-900 tracking-wider hover:text-green-700 transition-colors duration-200"
+                                >
+                                    {toTitleCase(contactoItem[language])}
+                                </a>
                     </div>
                 </div>
                 <div className="mt-12 border-t border-gray-200 pt-8 text-center">

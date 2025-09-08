@@ -15,6 +15,7 @@ interface BookingModalProps {
 const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, dates }) => {
     const { content, language } = useLanguage();
     const [venue, setVenue] = useState<'hotel' | 'bungalows' | ''>('');
+    // store selected room IDs to avoid depending on display casing
     const [selectedRooms, setSelectedRooms] = useState<string[]>([]);
     const [fullName, setFullName] = useState('');
     const [phone, setPhone] = useState('');
@@ -25,13 +26,24 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, dates }) =
 
     if (!isOpen) return null;
 
-    const handleRoomSelection = (roomName: string) => {
+    const handleRoomSelection = (roomId: string) => {
         setSelectedRooms(prev => 
-            prev.includes(roomName) 
-                ? prev.filter(r => r !== roomName)
-                : [...prev, roomName]
+            prev.includes(roomId) 
+                ? prev.filter(r => r !== roomId)
+                : [...prev, roomId]
         );
     };
+
+    const toTitleCase = (text: string) => {
+        if (!text) return text;
+        return text
+            .toLowerCase()
+            .split(' ')
+            .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+            .join(' ');
+    };
+
+    const options: ServiceItem[] = venue === 'hotel' ? bookableHotelServices : (venue === 'bungalows' ? bookableBungalowServices : []);
 
     const handleSubmit = () => {
         if (!fullName || !phone || !venue) {
@@ -46,17 +58,22 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, dates }) =
         message += `*Teléfono:* ${phone}\n`;
         if (dates.checkIn) message += `*Llegada:* ${dates.checkIn}\n`;
         if (dates.checkOut) message += `*Salida:* ${dates.checkOut}\n`;
+
         if (selectedRooms.length > 0) {
-            message += `*Interesado en:*\n- ${selectedRooms.join('\n- ')}\n`;
+            const selectedNames = selectedRooms.map(id => {
+                const found = options.find(o => o.id === id);
+                return found ? toTitleCase(found.name[language]) : id;
+            });
+
+            message += `*Interesado en:*\n- ${selectedNames.join('\n- ')}\n`;
         }
+
         message += `\nGracias.`;
 
         const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
         onClose();
     };
-
-    const options: ServiceItem[] = venue === 'hotel' ? bookableHotelServices : (venue === 'bungalows' ? bookableBungalowServices : []);
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center p-4">
@@ -68,6 +85,15 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, dates }) =
                     </button>
                 </div>
                 <div className="p-6 space-y-6 overflow-y-auto">
+                    <div>
+                        <label htmlFor="fullName" className="block text-lg font-semibold text-gray-700">{content.fullName} *</label>
+                        <input type="text" id="fullName" value={fullName} onChange={e => setFullName(e.target.value)} className="mt-1 block w-full bg-white text-gray-900 border border-gray-400 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm p-3" />
+                    </div>
+                    <div>
+                        <label htmlFor="phone" className="block text-lg font-semibold text-gray-700">{content.phone} *</label>
+                        <input type="tel" id="phone" value={phone} onChange={e => setPhone(e.target.value)} className="mt-1 block w-full bg-white text-gray-900 border border-gray-400 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm p-3" />
+                    </div>
+
                     <div>
                         <label className="block text-lg font-semibold text-gray-700">{content.venue} *</label>
                         <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -84,13 +110,13 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, dates }) =
 
                     <div>
                         <label className="block text-lg font-semibold text-gray-700">{content.selectRooms}</label>
-                        <div className="mt-2 p-4 border border-gray-200 rounded-lg max-h-60 overflow-y-auto">
+                        <div className="mt-2 p-4 border border-gray-200 rounded-lg">
                             {venue ? (
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                     {options.map(item => (
                                         <label key={item.id} className="flex items-center space-x-3 cursor-pointer">
-                                            <input type="checkbox" checked={selectedRooms.includes(item.name[language])} onChange={() => handleRoomSelection(item.name[language])} className="h-4 w-4 rounded border-gray-300 text-green-600 focus:ring-green-500 form-accent-green" />
-                                            <span className="text-gray-700 text-sm">{item.name[language]}</span>
+                                            <input type="checkbox" checked={selectedRooms.includes(item.id)} onChange={() => handleRoomSelection(item.id)} className="h-4 w-4 rounded border-gray-300 text-green-600 focus:ring-green-500 form-accent-green" />
+                                            <span className="text-gray-700 text-sm">{toTitleCase(item.name[language])}</span>
                                         </label>
                                     ))}
                                 </div>
@@ -98,15 +124,6 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, dates }) =
                                 <p className="text-gray-500 text-center">{content.noOptions}</p>
                             )}
                         </div>
-                    </div>
-
-                    <div>
-                        <label htmlFor="fullName" className="block text-lg font-semibold text-gray-700">{content.fullName} *</label>
-                        <input type="text" id="fullName" value={fullName} onChange={e => setFullName(e.target.value)} className="mt-1 block w-full bg-white text-gray-900 border border-gray-400 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm p-3" />
-                    </div>
-                     <div>
-                        <label htmlFor="phone" className="block text-lg font-semibold text-gray-700">{content.phone} *</label>
-                        <input type="tel" id="phone" value={phone} onChange={e => setPhone(e.target.value)} className="mt-1 block w-full bg-white text-gray-900 border border-gray-400 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm p-3" />
                     </div>
                 </div>
                 <div className="p-4 bg-gray-50 border-t flex justify-end space-x-3">
