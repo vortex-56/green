@@ -194,7 +194,7 @@ const Header: React.FC = () => {
         return (
             <header className="absolute top-0 left-0 right-0 z-40 pt-8 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-7xl mx-auto px-[4.75rem] sm:px-[5.25rem] lg:px-[5.75rem]">
-                    <div id="MenuHero" className="relative w-full bg-white/95 backdrop-blur-sm rounded-full shadow-[0_0_10px_rgba(0,0,0,0.1),_0_0_20px_rgba(0,0,0,0.1),_0_0_30px_rgba(0,0,0,0.1)] pl-8 pr-1 sm:pl-10 sm:pr-3 py-2 flex items-center justify-between">
+                    <div id="MenuHero" className="absolute left-1/2 -translate-x-1/2 sm:static sm:translate-x-0 w-[280px] mx-auto sm:w-full sm:mx-0 bg-white/95 backdrop-blur-sm rounded-full shadow-[0_0_10px_rgba(0,0,0,0.1),_0_0_20px_rgba(0,0,0,0.1),_0_0_30px_rgba(0,0,0,0.1)] pl-8 pr-1 sm:pl-10 sm:pr-3 py-2 flex items-center justify-between">
                         <div className="flex-shrink-0">
                             <Link to="/" onClick={handleLogoClick} className="flex items-center space-x-2 text-gray-800 hover:text-black transition-colors">
                                 <GreenParadiseLogo type="main" />

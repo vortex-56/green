@@ -101,35 +101,37 @@ const Hero: React.FC = () => {
                     <div className="relative z-20 flex flex-col space-y-4">
                         {/* Top Section */}
                         <div id="CajasSuperiores" className="-mt-8">
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                                <div className="bg-white rounded-2xl shadow-lg flex flex-col overflow-hidden">
-                                    <div className="p-4 flex items-center space-x-4 flex-grow">
-                                        <div className="flex-1">
-                                            <GreenParadiseLogo type="hotel" />
-                                        </div>
-                                        <div className="flex-1">
-                                            <ImageCarousel services={hotelCarouselImages} />
-                                        </div>
-                                    </div>
+                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-items-center lg:justify-items-stretch">
+                                <div className="bg-white rounded-2xl shadow-lg flex flex-col overflow-hidden w-[280px] sm:w-full">
+                                            <div className="p-4 flex flex-col md:flex-row items-center md:items-start lg:items-center md:justify-start lg:justify-center md:space-x-4 lg:space-x-4">
+                                                {/* Logo column: visible from sm, in lg uses a basis so it can shrink */}
+                                                <div className="hidden sm:flex sm:items-center md:items-center lg:items-center sm:flex-shrink-0 lg:flex-shrink lg:basis-1/4 lg:h-full mr-0 md:mr-4 lg:mr-2 lg:justify-center">
+                                                    <GreenParadiseLogo type="hotel" />
+                                                </div>
+                                                {/* Carousel column: takes remaining space on lg */}
+                                                <div className="w-full flex justify-center md:justify-start lg:justify-center lg:flex-[0.75]">
+                                                    <ImageCarousel services={hotelCarouselImages} />
+                                                </div>
+                                            </div>
                                     <button 
                                         onClick={() => handleScrollTo('hotel')}
-                                        className="w-full bg-green-600 text-white font-bold text-sm uppercase py-4 px-6 hover:bg-green-700 transition-colors"
+                                        className="w-full bg-green-600 text-white font-bold text-[12px] sm:text-sm uppercase py-3 sm:py-4 px-4 sm:px-6 hover:bg-green-700 transition-colors whitespace-nowrap"
                                     >
                                         {content.heroButtonViewAllHotel}
                                     </button>
                                 </div>
-                                <div className="bg-white rounded-2xl shadow-lg flex flex-col overflow-hidden">
-                                     <div className="p-4 flex items-center space-x-4 flex-grow">
-                                        <div className="flex-1">
+                                <div className="bg-white rounded-2xl shadow-lg flex flex-col overflow-hidden w-[280px] sm:w-full">
+                                    <div className="p-4 flex flex-col md:flex-row items-center md:items-start lg:items-center md:space-x-4 lg:justify-center lg:space-x-4">
+                                        <div className="hidden sm:flex sm:items-center md:items-center lg:items-center sm:flex-shrink-0 lg:flex-shrink lg:basis-1/4 lg:h-full mr-0 md:mr-4 lg:mr-2 lg:justify-center">
                                             <GreenParadiseLogo type="bungalow" />
                                         </div>
-                                        <div className="flex-1">
+                                        <div className="w-full flex justify-center md:justify-start lg:justify-center lg:flex-[0.75]">
                                             <ImageCarousel services={allBungalowServices.slice(0, 8)} initialDelay={300} />
                                         </div>
                                     </div>
                                     <button 
                                         onClick={() => handleScrollTo('bungalows')}
-                                        className="w-full bg-green-600 text-white font-bold text-sm uppercase py-4 px-6 hover:bg-green-700 transition-colors"
+                                        className="w-full bg-green-600 text-white font-bold text-[12px] sm:text-sm uppercase py-3 sm:py-4 px-4 sm:px-6 hover:bg-green-700 transition-colors whitespace-nowrap"
                                     >
                                         {content.heroButtonViewAllBungalow}
                                     </button>

@@ -35,29 +35,29 @@ Títulos Hotel
 
 Títulos Bungalows
 
-1		Cabaña Alpina Guanábano
-2		Cabaña Alpina Buganvilla
-3		Cabaña Alpina Naranjo
-4		Habitación Ciprés 1
-5		Habitación Ciprés 2
-6		Habitación Ciprés 3
-7		Habitación Cocos 1
-8		Habitación Cocos 2
-9		Habitación Limonero 1
-10		Habitación Limonero 2
-11		Habitación Bambú 1
-12		Habitación Bambú 2
-13		Habitación Bambú 3
-14		Habitación Cedro 1
-15		Habitación Cedro 2
-16		Habitación Charapita 1
-17		Habitación Charapita 2
-18		Habitación Shinbillo 1
-19		Habitación Shinbillo 2
-20		Habitación Shinbillo 3
+b01		Cabaña Alpina Guanábano
+b02		Cabaña Alpina Buganvilla
+b03		Cabaña Alpina Naranjo
+b04		Habitación Ciprés 1
+b05		Habitación Ciprés 2
+b06		Habitación Ciprés 3
+b07		Habitación Cocos 1
+b08		Habitación Cocos 2
+b09		Habitación Limonero 1
+b10		Habitación Limonero 2
+b11		Habitación Bambú 1
+b12		Habitación Bambú 2
+b13		Habitación Bambú 3
+b14		Habitación Cedro 1
+b15		Habitación Cedro 2
+b16		Habitación Charapita 1
+b17		Habitación Charapita 2
+b18		Habitación Shinbillo 1
+b19		Habitación Shinbillo 2
+b20		Habitación Shinbillo 3
 
-21		Restaurante
-22		Piscina Y Bar
-23		Zona De Juegos
-24		Caminata Al Cerro Runa Machu
-25		Noches De Fogatas
+b21		Restaurante
+b22		Piscina Y Bar
+b23		Zona De Juegos
+b24		Caminata Al Cerro Runa Machu
+b25		Noches De Fogatas
