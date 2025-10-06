@@ -8,15 +8,9 @@ Títulos Hotel
 6	Habitación ejecutiva matrimonial
 7	Suite
 8	Suite comfort
-9	Doble Simple - 2 personas
-10	Doble Simple - 3 personas
-11	Doble Simple - 4 personas
-12	Doble Comfort - 2 personas
-13	Doble comfort - 3 personas
-14	Doble comfort - 4 personas
-15	Doble Especial - 2 Personas
-16	Doble especial - 3 personas
-17	Doble especial - 4 personas
+9	Doble - 2 personas
+10	Doble - 3 personas
+11	Doble - 4 personas
 18	Triple comfort - 3 personas
 19	Triple comfort - 4 personas
 20	Triple Familiar - 3 personas
